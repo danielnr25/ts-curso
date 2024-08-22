@@ -21,3 +21,5 @@ function suma(num1:number){
 }
 
 console.log(suma(90));
+
+
