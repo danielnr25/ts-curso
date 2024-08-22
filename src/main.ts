@@ -26,6 +26,9 @@
 //    $listaFrutasDOM.appendChild($item);
 // });
 
+//Una interfaz en TypeScript se usa para definir la estructura de un objeto, especificando qué propiedades debe tener y de qué tipo son.
+//name: string y precio: number: La interfaz Fruta especifica que cualquier objeto de tipo Fruta debe tener dos propiedades: name y precio.
+
 interface Fruta{
    nombre: string;
    precio: number;
