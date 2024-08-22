@@ -1,0 +1,35 @@
+--- MODIFICAR EN EL HTML ---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INTRODUCCION A TYPESCRIPT</title>
+  </head>
+  <body>
+      <h1>INTRODUCCION A TYPESCRIPT</h1>
+      <h2>Contador: <span id="contador">0</span></h2>
+      <button id="btnContadorIncrementar">Incrementar</button>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+
+--- MODIFICAR EN EL main.ts ---
+// Obteniendo elementos del DOM
+
+const $contadorDOM = document.getElementById('contador') as HTMLSpanElement;
+const $botonDOM = document.getElementById('btnContadorIncrementar') as HTMLButtonElement;
+
+let contador = 0;
+
+const incrementarContador = () => {
+   contador +=1;
+   if($contadorDOM){
+      $contadorDOM.textContent = contador.toString();
+   }
+}
+
+if($botonDOM){
+   $botonDOM.addEventListener('click', incrementarContador);
+}

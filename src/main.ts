@@ -1,19 +1,49 @@
-// Obteniendo elementos del DOM
 
-const $contadorDOM = document.getElementById('contador') as HTMLSpanElement;
-const $botonDOM = document.getElementById('btnContadorIncrementar') as HTMLButtonElement;
+// const listaFrutas: string[] = ['platano','manzana','pera','fresa','naranja','uva'];
 
-let contador = 0;
+// const $listaFrutasDOM = document.getElementById('listadoFrutas') as HTMLUListElement;
 
-const incrementarContador = () => {
-   contador +=1;
-   if($contadorDOM){
-      $contadorDOM.textContent = contador.toString();
-   }
+// listaFrutas.forEach((fruta) => {
+//    const $item = document.createElement('li');
+//    $item.textContent = fruta;
+//    $listaFrutasDOM.appendChild($item);
+// });
+
+// const listadoFrutas = [
+//    { nombre: 'platano', precio: 1.5},
+//    { nombre: 'manzana', precio: 2 },
+//    { nombre: 'pera', precio: 3 },
+//    { nombre: 'fresa', precio: 4 },
+//    { nombre: 'naranja', precio: 1.5 },
+//    { nombre: 'uva', precio: 2 }
+// ];
+
+// const $listaFrutasDOM = document.getElementById('listadoFrutas') as HTMLUListElement;
+
+// listadoFrutas.forEach((fruta) => {
+//    const $item = document.createElement('li');
+//    $item.textContent = `${fruta.nombre} - ${fruta.precio} `;
+//    $listaFrutasDOM.appendChild($item);
+// });
+
+interface Fruta{
+   nombre: string;
+   precio: number;
 }
 
-if($botonDOM){
-   $botonDOM.addEventListener('click', incrementarContador);
-}
+const listadoFrutas: Fruta[] = [
+   { nombre: 'platano', precio: 1.5},
+   { nombre: 'manzana', precio: 2 },
+   { nombre: 'pera', precio: 3 },
+   { nombre: 'fresa', precio: 4 },
+   { nombre: 'naranja', precio: 1.5 },
+   { nombre: 'uva', precio: 2 }
+];
 
+const $listaFrutasDOM = document.getElementById('listadoFrutas') as HTMLUListElement;
 
+listadoFrutas.forEach((fruta) => {
+   const $item = document.createElement('li');
+   $item.textContent = `${fruta.nombre} - ${fruta.precio}`;
+   $listaFrutasDOM.appendChild($item);
+});
