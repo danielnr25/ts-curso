@@ -1,23 +1,22 @@
 {
   "compilerOptions": {
    "target": "ES2020", // Especifica la versión de JavaScript a la cual quieres que TypeScript transpile tu código, por ejemplo: ES5, ES6, ES2020, ESNext.
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
+   "useDefineForClassFields": true, // Usa la palabra clave `define` para inicializar propiedades de clase, lo que refleja más de cerca la semántica de ESNext.
+   "module": "ESNext", // Define el sistema de módulos que se utilizará en el código transpilado. ESNext usa la sintaxis moderna de import/export.
+   "lib": ["ES2020", "DOM", "DOM.Iterable"], // Especifica las bibliotecas estándar que TypeScript incluye en el entorno, como ES2020, DOM para APIs del navegador, y DOM.Iterable para estructuras iterables en el DOM.
+   "skipLibCheck": true, // Omite la verificación de tipos en archivos de declaración de bibliotecas (`.d.ts`), lo que puede acelerar la compilación.
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
+    "moduleResolution": "bundler", // Configura cómo se resuelven los módulos, adaptado para funcionar bien con herramientas de empaquetado como Webpack o Rollup.
+    "allowImportingTsExtensions": true, // Permite importar archivos TypeScript con extensiones explícitas, como `.ts` o `.tsx`.
+    "isolatedModules": true, // Garantiza que cada archivo se trate como un módulo independiente, útil para compatibilidad con herramientas de construcción.
+    "moduleDetection": "force", // Fuerza el tratamiento de todos los archivos como módulos, independientemente de si contienen import/export.
+    "noEmit": true, // Evita la emisión de archivos de salida, solo realiza la verificación de tipos.
 
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "strict": true, // Activa la verificación estricta de tipos en todo el proyecto para mayor seguridad y evitar errores comunes.
+    "noUnusedLocals": true, // Genera errores si hay variables locales declaradas pero no utilizadas.
+    "noUnusedParameters": true, // Genera errores si hay parámetros de funciones que no se utilizan.
+    "noFallthroughCasesInSwitch": true // Genera errores si hay casos en una declaración `switch` que pasan al siguiente caso sin un `break`.
   },
-  "include": ["src"]
+  "include": ["src"] // Especifica los archivos y carpetas que deben incluirse en la compilación; en este caso, todo lo que esté dentro de la carpeta `src`.
 }
